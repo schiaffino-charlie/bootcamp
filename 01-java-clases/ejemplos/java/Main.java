@@ -55,5 +55,19 @@ public class Main {
             System.out.println(CharlieList.get(i));
         }
 
+        System.out.println("======== Streaming? ========");
+
+        List<Person> personas = Arrays.asList(
+                new Person("Charlie", "123100", 20),
+                new Person("Yordany", "402320", 21),
+                new Person("Sharleston", "234242", 15)
+        );
+
+        // Ordena de menor a mayor.
+        personas.stream().sorted((person1, person2) -> ((Integer)person1.getEdad()).compareTo(person2.getEdad()))
+                .forEach(person -> System.out.println(person.getNombre()));
+
+
+
     }
 }
